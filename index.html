@@ -29,6 +29,22 @@
       color: var(--text);
       background: var(--bg);
     }
+    .contact-links {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 500;
+      color: #1f2a38;
+    }
+
+.contact-links a {
+  color: var(--brand-blue);   /* use your brand blue for links */
+  text-decoration: none;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
 
     .hero {
   position: relative;
@@ -106,6 +122,15 @@
   </style>
 </head>
 <body>
+  <!-- Contact info below the box -->
+  <div class="contact-links">
+    <p>
+      Contact:
+      <a href="tel:1234567890">123-456-7890</a>
+      &nbsp;|&nbsp;
+      <a href="mailto:christian@browardnotarynow.com">christian@browardnotarynow.com</a>
+    </p>
+  </div>
   <main class="hero" role="main" aria-label="Broward Notary Now — Website">
     <section class="card" role="region" aria-label="Notice">
       <img class="logo" src="images/BNN_Trans_Logo_700x366px.png" alt="Broward Notary Now logo" />
