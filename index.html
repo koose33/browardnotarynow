@@ -1,87 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Broward Notary Now</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Broward Notary Now — Website</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="Broward Notary Now — Mobile Notary Public serving Fort Lauderdale, Wilton Manors, Oakland Park, and surrounding Broward County." />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: #ffffff;
-      color: #333;
-      line-height: 1.6;
+    :root { --brand-orange:#F58220; --brand-blue:#061e36; --text:#0F172A; --bg:#0c1220; --card:rgba(255, 255, 255, 0.753); }
+    * { box-sizing:border-box; }
+    html, body { height:100%; margin:0; font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,'Apple Color Emoji','Segoe UI Emoji',sans-serif; color:var(--text); background:var(--bg); }
+    .hero {
+      position:relative; min-height:100vh; display:grid; place-items:center; padding:24px;
+      background-image: linear-gradient(rgba(12,18,32,0.45), rgba(12,18,32,0.45)), url('images/BNN_UnderCon_Hero_Image.jpg');
+      background-size:cover; background-position:center; background-repeat:no-repeat; overflow:hidden;
     }
-    header {
-      background: #0073e6;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
+    .card {
+      width:100%; max-width:820px; border-radius:28px; padding:25px;
+      background:var(--card); box-shadow:0 24px 60px rgba(0,0,0,0.28), 0 6px 14px rgba(0,0,0,0.10);
+      backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px); border:1px solid rgba(255,255,255,0.55);
+      text-align:center;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    header p {
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-    }
-    .section {
-      padding: 2rem 1rem;
-      max-width: 800px;
-      margin: auto;
-    }
-    .highlight {
-      color: #00e676;
-      font-weight: 600;
-    }
-    footer {
-      background: #f2f2f2;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #777;
-    }
-    .cta {
-      display: inline-block;
-      background: #00e676;
-      color: #000;
-      padding: 0.75rem 1.5rem;
-      margin-top: 1rem;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    .cta:hover {
-      background: #00c86e;
+    .logo { display:inline-block; max-height:120px; width:auto; object-fit:contain; margin:0 auto 14px auto; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.15)); }
+    .brand { margin:0 0 10px 0; font-size:clamp(38px,7vw,64px); line-height:1.08; font-weight:700; color:var(--brand-blue); letter-spacing:0.2px; }
+    .status { margin:0; font-style:italic; font-weight:500; font-size:clamp(20px,3vw,28px); color:var(--brand-orange); }
+    .sub { margin:12px 0 0 0; font-weight:500; font-size:clamp(16px,2.2vw,20px); color:#1f2a38; }
+    @media (prefers-reduced-motion: no-preference) {
+      .card { animation: floatIn 600ms cubic-bezier(.2,.8,.2,1) both; }
+      @keyframes floatIn { from { opacity:0; transform: translateY(16px) scale(.98); } to { opacity:1; transform: translateY(0) scale(1); } }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Broward Notary Now</h1>
-    <p>Mobile Notary Services Across Broward County</p>
-  </header>
-
-  <section class="section">
-    <h2>On-Demand Mobile Notary</h2>
-    <p>
-      Need a notary fast? <span class="highlight">We come to you</span> — homes, offices, hospitals, even coffee shops. Whether it’s an affidavit, power of attorney, or a lease agreement, we handle it all with speed and care.
-    </p>
-
-    <h2>Why Choose Us</h2>
-    <ul>
-      <li>✔ Local & responsive — based right in Broward County</li>
-      <li>✔ Friendly and professional, real human service</li>
-      <li>✔ Flexible scheduling — evenings & weekends available</li>
-    </ul>
-
-    <a href="tel:9548388383" class="cta">Call Now: 954.838.8383</a>
-  </section>
-
-  <footer>
-    &copy; 2025 Broward Notary Now. All rights reserved.
-  </footer>
+  <main class="hero" role="main" aria-label="Broward Notary Now — Website">
+    <section class="card" role="region" aria-label="Notice">
+      <img class="logo" src="images/BNN_Trans_Logo_700x366px.png" alt="Broward Notary Now logo" />
+      <h1 class="brand">Broward Notary Now</h1>
+      <p class="status">Our website is under construction.</p>
+      <p class="sub">Mobile Notary Public serving Fort Lauderdale, Wilton Manors, Oakland Park, and greater Broward County.</p>
+    </section>
+  </main>
 </body>
 </html>
