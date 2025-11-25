@@ -1,142 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Broward Notary Now — Website</title>
-  <meta name="robots" content="noindex, nofollow" />
-  <meta name="description" content="Broward Notary Now — Mobile Notary Public serving Fort Lauderdale, Wilton Manors, Oakland Park, and surrounding Broward County." />
-  <!-- Google Fonts: Montserrat Regular 400, Medium 500, Bold 700 with italic 500 -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --brand-orange: #F58220;   /* Orange for italic line */
-      --brand-blue:   #0B3D91;   /* Dark blue for title */
-      --text:         #0F172A;
-      --bg:           #0c1220;
-      --card:         rgba(255,255,255,0.65); /* 65% translucent white */
-    }
-
-    * { box-sizing: border-box; }
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
-      color: var(--text);
-      background: var(--bg);
-    }
-
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      background-image:
-        linear-gradient(rgba(12,18,32,0.45), rgba(12,18,32,0.45)),
-        url('images/BNN_UnderCon_Hero_Image.jpg'); /* background image */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      overflow: hidden;
-    }
-
-    .card {
-      width: 100%;
-      max-width: 820px;
-      border-radius: 28px;
-      padding: 25px;
-      background: var(--card);
-      box-shadow:
-        0 24px 60px rgba(0,0,0,0.28),
-        0 6px 14px rgba(0,0,0,0.10);
-      backdrop-filter: blur(3px);
-      -webkit-backdrop-filter: blur(3px);
-      border: 1px solid rgba(255,255,255,0.55);
-      text-align: center;
-    }
-
-    /* Centered logo placeholder */
-    .logo {
-      display: inline-block;
-      max-height: 120px;
-      width: auto;
-      object-fit: contain;
-      margin: 0 auto 14px auto;
-      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
-    }
-
-    .brand {
-      margin: 0 0 10px 0;
-      font-size: clamp(38px, 7vw, 64px);
-      line-height: 1.08;
-      font-weight: 700;
-      color: var(--brand-blue);
-      letter-spacing: 0.2px;
-    }
-
-    /* Orange italic — Montserrat Medium Italic (500 italic) */
-    .status {
-      margin: 0;
-      font-style: italic;
-      font-weight: 500;
-      font-size: clamp(20px, 3vw, 28px);
-      color: var(--brand-orange);
-    }
-
-    /* Subline — Montserrat Medium (500), slightly smaller but readable */
-    .sub {
-      margin: 12px 0 0 0;
-      font-weight: 500;
-      font-size: clamp(16px, 2.2vw, 20px);
-      color: #1f2a38;
-    }
-
-    .contact-links {
-      margin-top: 20px;
-      text-align: center;
-      font-size: 16px;
-      font-weight: 700;   /* bolder text */
-      color: #FFFFFF;     /* white font */
-    }
-
-    .contact-links a {
-      color: #FFFFFF;     /* white links */
-      text-decoration: underline; /* always underline links */
-      font-weight: 700;
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-      .card { animation: floatIn 600ms cubic-bezier(.2,.8,.2,1) both; }
-      @keyframes floatIn {
-        from { opacity: 0; transform: translateY(16px) scale(.98); }
-        to   { opacity: 1; transform: translateY(0) scale(1); }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Broward Notary Now | Remote Online & Mobile Notary Service in Fort Lauderdale, FL</title>
+    <meta name="description" content="Professional remote online notarization (RON) available 24/7 and mobile notary services throughout Broward County, Florida. Serving Fort Lauderdale, Wilton Manors, Oakland Park. Fast, secure, and reliable." />
+    <meta name="keywords" content="notary, mobile notary, remote online notarization, RON, Fort Lauderdale, Wilton Manors, Oakland Park, Broward County, Florida notary, notary public" />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Broward Notary Now - Remote Online & Mobile Notary Services" />
+    <meta property="og:description" content="Fast, secure notary services in Broward County, FL. Remote online notarization 24/7 or mobile service at your location." />
+    <meta property="og:type" content="website" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                cream: '#FFF8F0',
+                aqua: '#4DD0E1',
+                teal: '#00897B',
+                darkTeal: '#00695C',
+                coral: '#FF6B6B',
+                navy: '#1A3A52',
+                gray: '#666666',
+                lightGray: '#F5F5F5',
+              }
+            },
+            fontFamily: {
+              sans: ['Montserrat', 'sans-serif'],
+              heading: ['Bebas Neue', 'sans-serif'],
+            },
+            backgroundImage: {
+              'hero-gradient': 'linear-gradient(135deg, #00897B 0%, #4DD0E1 100%)',
+            }
+          }
+        }
       }
-    }
-  </style>
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Montserrat', sans-serif;
+        color: #1A3A52;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Bebas Neue', sans-serif;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
 </head>
-<body>
-  <main class="hero" role="main" aria-label="Broward Notary Now — Website">
-    <section class="card" role="region" aria-label="Notice">
-      <img class="logo" src="images/BNN_Trans_Logo_700x366px.png" alt="Broward Notary Now logo" />
-
-      <h1 class="brand">Broward Notary Now</h1>
-
-      <p class="status">Our website is under construction.</p>
-
-      <p class="sub">Mobile Notary Public serving Fort Lauderdale, Wilton Manors, Oakland Park, and greater Broward County.</p>
-    </section>
-
-    <!-- Contact info below the box -->
-    <div class="contact-links">
-      <p>
-        Contact:
-        <a href="tel:19543614931">954-361-4931</a>
-        &nbsp;|&nbsp;
-        <a href="mailto:christian@browardnotarynow.com">christian@browardnotarynow.com</a>
-      </p>
-    </div>
-  </main>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
 </body>
 </html>
