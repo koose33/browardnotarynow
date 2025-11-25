@@ -42,29 +42,35 @@ export const Header: React.FC = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
-            <button onClick={() => scrollToSection('services')} className="text-brand-navy hover:text-brand-teal transition-colors font-medium">
-              Services
+          <div className="hidden md:flex items-center space-x-1">
+            <button onClick={() => scrollToSection('services')} className="text-brand-navy hover:text-brand-teal transition-all font-medium px-4 py-2 opacity-70 hover:opacity-100 uppercase text-sm tracking-wide">
+              SERVICES
             </button>
-            <button onClick={() => scrollToSection('why-choose-us')} className="text-brand-navy hover:text-brand-teal transition-colors font-medium">
-              Why Choose Us
+            <span className="text-brand-gray opacity-30">|</span>
+            <button onClick={() => scrollToSection('why-choose-us')} className="text-brand-navy hover:text-brand-teal transition-all font-medium px-4 py-2 opacity-70 hover:opacity-100 uppercase text-sm tracking-wide">
+              WHY CHOOSE US
             </button>
-            <button onClick={() => scrollToSection('service-areas')} className="text-brand-navy hover:text-brand-teal transition-colors font-medium">
-              Service Areas
+            <span className="text-brand-gray opacity-30">|</span>
+            <button onClick={() => scrollToSection('service-areas')} className="text-brand-navy hover:text-brand-teal transition-all font-medium px-4 py-2 opacity-70 hover:opacity-100 uppercase text-sm tracking-wide">
+              SERVICE AREAS
             </button>
-            <button onClick={() => scrollToSection('documents')} className="text-brand-navy hover:text-brand-teal transition-colors font-medium">
-              Documents
+            <span className="text-brand-gray opacity-30">|</span>
+            <button onClick={() => scrollToSection('documents')} className="text-brand-navy hover:text-brand-teal transition-all font-medium px-4 py-2 opacity-70 hover:opacity-100 uppercase text-sm tracking-wide">
+              DOCUMENTS
             </button>
-            <button onClick={() => scrollToSection('contact')} className="text-brand-navy hover:text-brand-teal transition-colors font-medium">
-              Contact
+            <span className="text-brand-gray opacity-30">|</span>
+            <button onClick={() => scrollToSection('contact')} className="text-brand-navy hover:text-brand-teal transition-all font-medium px-4 py-2 opacity-70 hover:opacity-100 uppercase text-sm tracking-wide">
+              CONTACT
             </button>
-            <a
-              href={`tel:${CONTACT_INFO.phoneRaw}`}
-              className="flex items-center gap-2 bg-brand-coral text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition-all font-semibold shadow-lg hover:shadow-xl"
-            >
-              <Phone size={18} />
-              <span>Call Now</span>
-            </a>
+            <div className="ml-4">
+              <a
+                href={`tel:${CONTACT_INFO.phoneRaw}`}
+                className="flex items-center gap-2 bg-brand-coral text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition-all font-semibold shadow-lg hover:shadow-xl uppercase text-sm"
+              >
+                <Phone size={16} />
+                <span>CALL OR TEXT</span>
+              </a>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -114,7 +120,7 @@ export const Header: React.FC = () => {
               className="flex items-center justify-center gap-2 bg-brand-coral text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition-all font-semibold shadow-lg mt-4"
             >
               <Phone size={18} />
-              <span>Call Now</span>
+              <span>Call or Text</span>
             </a>
           </div>
         )}

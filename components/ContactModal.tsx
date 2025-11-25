@@ -81,11 +81,11 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 overflow-y-auto">
-      <div className="bg-white rounded-2xl max-w-2xl w-full my-8 relative shadow-2xl">
-        {/* Close Button */}
+      <div className="bg-white rounded-2xl max-w-2xl w-full my-8 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+        {/* Close Button - Fixed position */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-brand-gray hover:text-brand-navy transition-colors"
+          className="sticky top-4 float-right mr-4 mt-4 z-10 text-brand-gray hover:text-brand-navy transition-colors bg-white rounded-full p-2 shadow-lg"
           aria-label="Close"
         >
           <X size={24} />

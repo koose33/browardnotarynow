@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Phone, Mail } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
-import { ContactModal } from './ContactModal';
 
 export const Hero: React.FC = () => {
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-
   return (
-    <>
       <section id="home" className="relative bg-hero-gradient text-white pt-24 pb-16 md:pt-32 md:pb-24">
         {/* Background Pattern Overlay - Optional decorative element */}
         <div className="absolute inset-0 opacity-10">
@@ -57,15 +53,15 @@ export const Hero: React.FC = () => {
                 className="flex items-center gap-2 bg-brand-coral text-white px-8 py-4 rounded-full hover:bg-opacity-90 transition-all font-semibold text-lg shadow-xl hover:shadow-2xl hover:scale-105 w-full sm:w-auto justify-center"
               >
                 <Phone size={22} />
-                <span>Call Now</span>
+                <span>Call or Text Now</span>
               </a>
-              <button
-                onClick={() => setIsContactModalOpen(true)}
+              <a
+                href={`mailto:${CONTACT_INFO.email}`}
                 className="flex items-center gap-2 bg-white text-brand-teal px-8 py-4 rounded-full hover:bg-opacity-90 transition-all font-semibold text-lg shadow-xl hover:shadow-2xl hover:scale-105 w-full sm:w-auto justify-center"
               >
                 <Mail size={22} />
-                <span>Get Started Online</span>
-              </button>
+                <span>Email Us</span>
+              </a>
             </div>
 
             {/* Key Value Props */}
@@ -86,8 +82,5 @@ export const Hero: React.FC = () => {
           </div>
         </div>
       </section>
-
-      <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
-    </>
   );
 };

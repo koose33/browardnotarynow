@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Laptop, Car, Check } from 'lucide-react';
 import { SERVICES } from '../constants';
-import { ContactModal } from './ContactModal';
 
 export const Services: React.FC = () => {
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-
   return (
-    <>
       <section id="services" className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
@@ -67,7 +63,10 @@ export const Services: React.FC = () => {
                   </div>
 
                   <button
-                    onClick={() => setIsContactModalOpen(true)}
+                    onClick={() => {
+                      const element = document.getElementById('contact');
+                      if (element) element.scrollIntoView({ behavior: 'smooth' });
+                    }}
                     className={`w-full py-3 px-6 rounded-full font-semibold transition-all hover:scale-105 ${
                       service.primary
                         ? 'bg-white text-brand-teal hover:bg-opacity-90'
@@ -82,8 +81,5 @@ export const Services: React.FC = () => {
           </div>
         </div>
       </section>
-
-      <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
-    </>
   );
 };

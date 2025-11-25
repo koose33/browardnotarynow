@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Phone, Mail, Clock, MapPin } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
-import { ContactModal } from './ContactModal';
 
 export const Contact: React.FC = () => {
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-
   return (
-    <>
       <section id="contact" className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
@@ -86,24 +82,24 @@ export const Contact: React.FC = () => {
                   READY TO GET STARTED?
                 </h3>
                 <p className="text-brand-gray text-center mb-6">
-                  Choose the option that works best for you
+                  Call, text, or email us today
                 </p>
                 
                 <div className="space-y-3">
-                  <button
-                    onClick={() => setIsContactModalOpen(true)}
-                    className="w-full bg-brand-teal text-white py-4 px-6 rounded-full hover:bg-brand-darkTeal transition-all font-semibold shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
-                  >
-                    <Mail size={20} />
-                    <span>Send Us a Message</span>
-                  </button>
-                  
                   <a
                     href={`tel:${CONTACT_INFO.phoneRaw}`}
                     className="w-full bg-brand-coral text-white py-4 px-6 rounded-full hover:bg-opacity-90 transition-all font-semibold shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
                   >
                     <Phone size={20} />
-                    <span>Call Now</span>
+                    <span>Call or Text Now</span>
+                  </a>
+                  
+                  <a
+                    href={`mailto:${CONTACT_INFO.email}`}
+                    className="w-full bg-brand-teal text-white py-4 px-6 rounded-full hover:bg-brand-darkTeal transition-all font-semibold shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
+                  >
+                    <Mail size={20} />
+                    <span>Email Us</span>
                   </a>
                 </div>
 
@@ -121,14 +117,11 @@ export const Contact: React.FC = () => {
                 Need notarization right now?
               </p>
               <p className="text-white text-opacity-90">
-                Call us at <a href={`tel:${CONTACT_INFO.phoneRaw}`} className="font-bold hover:text-opacity-80 transition-colors">{CONTACT_INFO.phone}</a> for immediate assistance
+                Call or text us at <a href={`tel:${CONTACT_INFO.phoneRaw}`} className="font-bold hover:text-opacity-80 transition-colors">{CONTACT_INFO.phone}</a> for immediate assistance
               </p>
             </div>
           </div>
         </div>
       </section>
-
-      <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
-    </>
   );
 };
