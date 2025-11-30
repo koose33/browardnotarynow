@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
+import { CONTACT_INFO } from '../constants'; // Keeping this import even though CONTACT_INFO might not be used directly in the header, relying on context/global data.
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,14 +24,17 @@ export const Header: React.FC = () => {
     <header className="fixed top-0 w-full bg-white shadow-md z-50">
       <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
+          {/* HEADER LOGO - PATH ADJUSTED TO ROOT */}
           <div className="flex items-center cursor-pointer" onClick={() => scrollToSection('home')}>
             <img 
-              src="/images/broward-notary-now-header-logo.png" 
+              // *** PATH FIXED *** Assumes image is in root folder due to upload error
+              src="/broward-notary-now-header-logo.png" 
               alt="Broward Notary Now" 
               className="h-10 md:h-12 w-auto object-contain"
             />
           </div>
 
+          {/* DESKTOP NAV */}
           <div className="hidden md:flex items-center space-x-1">
             {navLinks.map((link, index) => (
               <React.Fragment key={link.id}>
@@ -46,6 +50,7 @@ export const Header: React.FC = () => {
             
             <div className="ml-4">
               <button
+                // Opens the modal via the hidden button in App.tsx
                 onClick={() => {
                   const modalOpener = document.getElementById('contact-modal-opener');
                   if (modalOpener) modalOpener.click(); 
@@ -57,6 +62,7 @@ export const Header: React.FC = () => {
             </div>
           </div>
 
+          {/* MOBILE MENU BUTTON */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-brand-navy"
@@ -65,6 +71,7 @@ export const Header: React.FC = () => {
           </button>
         </div>
 
+        {/* MOBILE NAV */}
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-3">
             {navLinks.map((link) => (
@@ -77,6 +84,7 @@ export const Header: React.FC = () => {
               </button>
             ))}
             <button
+              // Opens the modal via the hidden button in App.tsx
               onClick={() => {
                 const modalOpener = document.getElementById('contact-modal-opener');
                 if (modalOpener) modalOpener.click(); 
@@ -92,3 +100,4 @@ export const Header: React.FC = () => {
     </header>
   );
 };
+
