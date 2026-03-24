@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Broward Notary Now - Review Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Lato', sans-serif;
+    padding: 40px 20px;
+  }
+
+  .page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .label {
+    color: #888;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* CARD */
+  .card {
+    width: 3.5in;
+    min-height: 4in;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+    position: relative;
+  }
+
+  /* TOP BAND */
+  .top-band {
+    background: #0a2540;
+    padding: 22px 24px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    position: relative;
+  }
+
+  .top-band::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #c8a96e, #e8c989, #c8a96e);
+  }
+
+  .seal-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+
+  .seal {
+    width: 36px;
+    height: 36px;
+    border: 2px solid #c8a96e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #c8a96e;
+    flex-shrink: 0;
+  }
+
+  .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .brand-name span {
+    color: #c8a96e;
+  }
+
+  .tagline {
+    font-family: 'Lato', sans-serif;
+    font-size: 9px;
+    font-weight: 300;
+    color: #8ab0d0;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  /* BODY */
+  .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 20px 20px;
+    gap: 16px;
+    background: #fafafa;
+  }
+
+  .cta-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0a2540;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .cta-sub {
+    font-size: 11px;
+    color: #666;
+    text-align: center;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    margin-top: -8px;
+  }
+
+  /* QR */
+  .qr-wrapper {
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #e8c989;
+    box-shadow: 0 4px 20px rgba(10,37,64,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #qrcode canvas, #qrcode img {
+    display: block;
+    border-radius: 4px;
+  }
+
+  .scan-label {
+    font-size: 10px;
+    color: #888;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  /* STARS */
+  .stars {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    margin-top: -4px;
+  }
+
+  .star {
+    font-size: 18px;
+    color: #c8a96e;
+  }
+
+  /* BOTTOM BAND */
+  .bottom-band {
+    background: #0a2540;
+    padding: 12px 20px;
+    text-align: center;
+  }
+
+  .bottom-text {
+    font-size: 9px;
+    color: #8ab0d0;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .bottom-url {
+    font-size: 10px;
+    color: #c8a96e;
+    margin-top: 2px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  /* PRINT */
+  @media print {
+    body {
+      background: white;
+      padding: 0;
+    }
+    .card {
+      box-shadow: none;
+      border: 1px solid #ddd;
+    }
+    .label { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <p class="label">Print-Ready · 3.5" × 4"</p>
+
+  <div class="card">
+    <div class="top-band">
+      <div class="seal-row">
+        <div class="seal">✦</div>
+        <div class="brand-name">Broward <span>Notary</span> Now</div>
+        <div class="seal">✦</div>
+      </div>
+      <div class="tagline">Florida Commissioned Notary Public</div>
+    </div>
+
+    <div class="card-body">
+      <div class="cta-text">Your review means<br>everything to us.</div>
+      <div class="cta-sub">If we made your notarization easy,<br>take 30 seconds to let others know.</div>
+
+      <div class="stars">
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+      </div>
+
+      <div class="qr-wrapper">
+        <div id="qrcode"></div>
+      </div>
+
+      <div class="scan-label">↑ Scan to leave a Google review</div>
+    </div>
+
+    <div class="bottom-band">
+      <div class="bottom-text">Remote Online &amp; Mobile Notary · Broward County, FL</div>
+      <div class="bottom-url">browardnotarynow.com</div>
+    </div>
+  </div>
+
+  <p class="label">Ctrl+P / Cmd+P to print</p>
+</div>
+
+<script>
+  new QRCode(document.getElementById("qrcode"), {
+    text: "https://share.google/QaZx8SDZ7nnAZTJin",
+    width: 160,
+    height: 160,
+    colorDark: "#0a2540",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H
+  });
+</script>
+</body>
+</html>
